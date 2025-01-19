@@ -21,8 +21,5 @@ def myPow(x, n):
         return ok
 
 
-
-
-
 ans = myPow(x, n)
 print(ans)
