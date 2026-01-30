@@ -62,7 +62,7 @@ class Solution:
                 return True
             i, j = empties[idx]
             b = (i//3)*3 + j//3
-            for k in map(str, range(1, 10)):
+            for k in "123456789":
                 if k not in rows[i] and k not in cols[j] and k not in boxes[b]:
                     board[i][j] = k
                     rows[i].add(k)
