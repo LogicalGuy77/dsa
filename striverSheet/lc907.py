@@ -5,10 +5,14 @@ class Solution:
         n = len(arr)
 
         # prev smallest index
-        psi = [-1]
-        for i in range(1, n):
-            idx = i-1 if arr[i-1] < arr[i] else psi[-1]
-            psi.append(idx)
+        stack = []
+        psi = [-1]*n
+        
+        for i in range(n):
+            while stack and arr[stack[-1]] > arr[i]:
+                stack.pop()
+            psi[i] = stack[-1] if stack else -1
+            stack.append(i)
         
         print(psi)
 
@@ -35,7 +39,7 @@ class Solution:
 
 
 obj = Solution()
-arr = [3,1,2,4]
+arr = [2,9,7,8,3,4,6,1]
 obj.sumSubarrayMins(arr)
 
 
