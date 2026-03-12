@@ -29,6 +29,7 @@ class Solution:
             left = i - psi[i]
             right = nsi[i] - i
 
+            # no. of sub arr you can generate is left*right
             sum += right*left*arr[i]
         
 
